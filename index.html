@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nico Secure Storage | Climate-Controlled Storage in the Heber Valley, 10x10 for $65</title>
+<meta name="description" content="Indoor, climate-controlled storage in the Heber Valley. 10x10 units $65/month, 15x10 $89, 16x10 $93. Rent online in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #e8681f;
+  --orange-dark: #c4520f;
+  --ink: #1d1c1a;
+  --ink-2: #57544f;
+  --cream: #f5f2ec;
+  --card: #ffffff;
+  --line: #e3ded5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 16px/1.55 Inter, system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* top bar */
+.top { position: sticky; top: 0; z-index: 10; background: #f5f2ec; border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+.logo { font-weight: 800; letter-spacing: .02em; text-decoration: none; font-size: 17px; }
+.logo span { color: var(--orange); }
+
+.btn { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; border-radius: 10px; padding: 14px 22px; font-size: 17px; text-align: center; transition: background .15s, transform .15s; }
+.btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.btn.small { padding: 9px 16px; font-size: 15px; }
+.btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: #fff; }
+
+/* hero */
+.hero { padding: 56px 0 44px; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; background-position: center top; }
+.priceboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 760px; margin: 0 0 26px; }
+.pb { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; text-decoration: none; transition: transform .15s, border-color .15s; }
+.pb:hover { transform: translateY(-2px); border-color: var(--orange); }
+.pb .s { font-size: 13px; font-weight: 700; color: var(--ink-2); text-transform: uppercase; letter-spacing: .06em; }
+.pb .p { font-size: 34px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+.pb .p small { font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.pb .p em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--ink-2); margin-right: 2px; }
+.pb.hot { background: var(--orange); border-color: var(--orange); color: #fff; }
+.pb.hot .s, .pb.hot .p small { color: #ffe3d2; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 600; }
+.pill small { color: var(--ink-2); font-weight: 500; }
+.pill.hot { background: var(--orange); border-color: var(--orange); color: #fff; }
+.stars { color: #f2a900; letter-spacing: 1px; font-size: 15px; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange-dark); }
+.hero h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.05; letter-spacing: -.02em; margin: 12px 0 16px; max-width: 760px; }
+.hero h1 em { font-style: normal; color: var(--orange); }
+.hero p.lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--ink-2); max-width: 600px; margin: 0 0 26px; }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.trust { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 26px; font-weight: 600; font-size: 15px; }
+.trust span { display: inline-flex; align-items: center; gap: 8px; }
+.trust svg { flex: none; }
+
+/* sections */
+section { padding: 52px 0; }
+h2 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -.01em; line-height: 1.15; margin: 0 0 8px; }
+.sub { color: var(--ink-2); margin: 0 0 28px; max-width: 620px; font-size: 17px; }
+
+/* unit cards */
+.units { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.unit { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; position: relative; }
+.unit.best { border: 2px solid var(--orange); }
+.badge { position: absolute; top: -12px; left: 20px; background: var(--orange); color: #fff; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; letter-spacing: .04em; }
+.unit .size { font-size: 15px; font-weight: 700; color: var(--ink-2); }
+.unit .price { font-size: 46px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin: 6px 0 2px; }
+.unit .price small { font-size: 17px; font-weight: 600; color: var(--ink-2); }
+.unit .fits { color: var(--ink-2); font-size: 15px; margin: 6px 0 18px; flex: 1; }
+.unit .btn { width: 100%; }
+.more { margin-top: 18px; font-size: 15px; color: var(--ink-2); }
+.more a { font-weight: 600; color: var(--orange-dark); }
+
+/* size visualizer */
+.card-lite { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.size-groups { display: inline-flex; background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 4px; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
+.size-groups button { font: inherit; font-weight: 700; font-size: 15px; padding: 7px 16px; border: 0; border-radius: 9px; background: transparent; color: var(--ink); cursor: pointer; text-align: left; }
+.size-groups button small { display: block; font-weight: 500; font-size: 11.5px; color: var(--ink-2); }
+.size-groups button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.size-groups button[aria-selected="true"] small { color: #cfcac1; }
+.size-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.size-tabs button { font: inherit; font-weight: 700; font-size: 15px; padding: 8px 14px; border-radius: 10px; border: 1.5px solid var(--line); background: var(--cream); color: var(--ink); cursor: pointer; }
+.size-tabs button small { display: block; font-weight: 500; font-size: 12px; color: var(--ink-2); }
+.size-tabs button[aria-selected="true"] { background: var(--orange); border-color: var(--orange); color: #fff; }
+.size-tabs button[aria-selected="true"] small { color: #ffe3d2; }
+.size-stage svg { width: 100%; height: auto; display: block; }
+.size-stage .lbl { font: 600 11px Inter, sans-serif; fill: #57544f; }
+.size-stage .dim { font: 700 13px Inter, sans-serif; fill: #c4520f; }
+.size-info { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.size-info p { margin: 4px 0 0; color: var(--ink-2); font-size: 15px; max-width: 560px; }
+.si-size { font-size: 22px; font-weight: 800; margin-right: 10px; }
+.si-price { font-size: 18px; font-weight: 700; color: var(--orange-dark); }
+.size-note { font-size: 12.5px; color: var(--ink-2); margin: 12px 0 0; }
+
+/* features */
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.feature { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 18px; }
+.feature .ic { width: 44px; height: 44px; border-radius: 12px; background: #fde9dc; display: grid; place-items: center; margin-bottom: 12px; }
+.feature h3 { margin: 0 0 4px; font-size: 18px; }
+.feature p { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+/* business */
+.biz { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+.biz ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.biz li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-weight: 600; }
+.biz li span { display: block; font-weight: 400; color: var(--ink-2); font-size: 14.5px; }
+
+/* how */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; counter-reset: s; }
+.step { counter-increment: s; padding: 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+.step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 800; margin-bottom: 10px; }
+.step h3 { margin: 0 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+/* final */
+.final { text-align: center; padding: 64px 0; }
+.final h2 { margin-bottom: 10px; }
+.final .sub { margin: 0 auto 24px; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 90px; font-size: 14px; color: var(--ink-2); }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+/* sticky mobile CTA */
+.mobile-cta { display: none; }
+@media (max-width: 760px) {
+  .biz { grid-template-columns: 1fr; }
+  .priceboard { grid-template-columns: repeat(2, 1fr); }
+  .top .btn { display: none; }
+  .mobile-cta { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 20; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+  .mobile-cta .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#">NICO <span>SECURE STORAGE</span></a>
+    <a class="btn small rent" href="https://www.nicosecurestorage.com/pages/rent">Rent online</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="pill"><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0 on Google</b></span>
+      <span class="pill">Serving the Heber Valley</span>
+      <span class="pill hot">10x10 units $65/month</span>
+    </div>
+    <h1>Climate-controlled storage in the Heber Valley at <em>competitively low prices</em>.</h1>
+    <p class="lead">Every unit is indoor and climate-controlled. Pick your size, see the price, and rent online in a few minutes.</p>
+    <div class="priceboard" aria-label="Monthly prices">
+      <a class="pb rent" href="https://www.nicosecurestorage.com/pages/rent"><span class="s">8x5</span><span class="p">$35<small>/mo</small></span></a>
+      <a class="pb rent" href="https://www.nicosecurestorage.com/pages/rent"><span class="s">8x6</span><span class="p">$42<small>/mo</small></span></a>
+      <a class="pb rent" href="https://www.nicosecurestorage.com/pages/rent"><span class="s">10x5</span><span class="p">$45<small>/mo</small></span></a>
+      <a class="pb rent hot" href="https://www.nicosecurestorage.com/pages/rent"><span class="s">10x10</span><span class="p">$65<small>/mo</small></span></a>
+    </div>
+    <div class="ctas">
+      <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">See units &amp; rent online</a>
+      <a class="btn ghost" href="#prices">View prices</a>
+    </div>
+    <div class="trust">
+<span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8681f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Regular prices, not intro deals</span>
+      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8681f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% climate-controlled</span>
+      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8681f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Rent online, any time</span>
+    </div>
+  </div>
+</section>
+
+<section id="sizes">
+  <div class="wrap">
+    <h2>How big is each unit?</h2>
+    <p class="sub">Tap a size to see it from above, drawn to scale with everyday items for reference.</p>
+    <div class="sizer card-lite">
+      <div class="size-groups" aria-label="Size groups"></div>
+      <div class="size-tabs" role="tablist" aria-label="Unit sizes"></div>
+      <div class="size-stage"><svg id="sizeSvg" role="img" aria-label="Top-down drawing of the selected unit"></svg></div>
+      <div class="size-info">
+        <div><span class="si-size" id="siSize"></span><span class="si-price" id="siPrice"></span></div>
+        <p id="siFits"></p>
+        <a class="btn small rent" id="siRent" href="https://www.nicosecurestorage.com/pages/rent">Rent this size</a>
+      </div>
+      <p class="size-note">Drawings are approximate and to scale (1 grid square = 1 foot). Items shown are typical sizes: queen bed 5×6.7 ft, sofa 7×3 ft, moving box about 1.5 ft.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Why people store with Nico</h2>
+    <p class="sub">An indoor facility right on Highway 40.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4520f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></div>
+        <h3>Climate-controlled</h3>
+        <p>Helps protect furniture, documents, electronics and wood from Heber's hot summers and freezing winters.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4520f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
+        <h3>Fully indoor</h3>
+        <p>Your things stay out of the snow, sun and dust, inside a clean building.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4520f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="m9 10 3-3 3 3M9 14l3 3 3-3"/></svg></div>
+        <h3>Elevator access</h3>
+        <p>No hauling heavy boxes up the stairs.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4520f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <h3>Rent online</h3>
+        <p>Choose your unit and rent from your phone. No phone tag and no waiting for office hours.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4520f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <h3>Regular prices</h3>
+        <p>The price you see is the normal monthly rate, not a first-month deal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <h2>Need a bigger space?</h2>
+    <p class="sub">Larger units are climate-controlled too, at regular monthly prices.</p>
+    <div class="units">
+      <div class="unit best">
+        <span class="badge">FITS A 1-BEDROOM</span>
+        <div class="size">10x10 unit · 100 sq ft</div>
+        <div class="price">$65<small>/month</small></div>
+        <p class="fits">About the contents of a one-bedroom apartment, or seasonal gear and furniture.</p>
+        <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">Rent a 10x10</a>
+      </div>
+      <div class="unit">
+        <div class="size">15x10 unit · 150 sq ft</div>
+        <div class="price">$89<small>/month</small></div>
+        <p class="fits">About the contents of a two-bedroom home, or business inventory and supplies.</p>
+        <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">Rent a 15x10</a>
+      </div>
+      <div class="unit">
+        <div class="size">16x10 unit · 160 sq ft</div>
+        <div class="price">$93<small>/month</small></div>
+        <p class="fits">Room for a larger home, staging furniture, or a property manager's spare furnishings.</p>
+        <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">Rent a 16x10</a>
+      </div>
+    </div>
+    <p class="more">Need something else? Small units start at <b>$35/month</b> and large 22x10 units are <b>$249/month</b>. <a class="rent" href="https://www.nicosecurestorage.com/pages/rent">See every size →</a></p>
+  </div>
+</section>
+
+<section id="business">
+  <div class="wrap biz">
+    <div>
+      <h2>Storage for local businesses</h2>
+      <p class="sub" style="margin-bottom:20px">Realtors, home stagers, property managers and local shops can use Nico's larger units for furniture, inventory and records, so they don't need more retail or office space.</p>
+      <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">Find a business-size unit</a>
+    </div>
+    <ul>
+      <li>Home stagers &amp; realtors<span>Keep staging furniture close to Heber, Midway and Park City listings.</span></li>
+      <li>Vacation-rental &amp; property managers<span>Store spare linens, furniture and seasonal items between turnovers.</span></li>
+      <li>Offices &amp; practices<span>Climate control helps protect paper records over time.</span></li>
+      <li>Shops &amp; online sellers<span>Overflow inventory without leasing more retail space.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">From search to stored in three steps.</p>
+    <div class="steps">
+      <div class="step"><h3>Pick a size</h3><p>Choose the unit that fits. The 10x10 works well for many moves and for seasonal storage.</p></div>
+      <div class="step"><h3>Rent online</h3><p>Reserve and rent in a few minutes from your phone or computer.</p></div>
+      <div class="step"><h3>Move in</h3><p>Bring your things to 3500 US-40, by the Heber Valley on Highway 40.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Ready when you are</h2>
+    <p class="sub">Climate-controlled 10x10 units for $65 a month, right on Highway 40.</p>
+    <a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">See units &amp; rent online</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Nico Secure Storage</b> · <span style="color:#f2a900">★★★★★</span> 5.0 on Google<br>3500 US-40 · Heber Valley, Utah<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Nico+Secure+Storage+3500+US-40" target="_blank" rel="noopener">Get directions</a></div>
+    <div>Prices per month, as of October 2026. Subject to availability.<br><a href="https://www.nicosecurestorage.com" target="_blank" rel="noopener">nicosecurestorage.com</a></div>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a class="btn rent" href="https://www.nicosecurestorage.com/pages/rent">Rent online · 10x10 from $65</a></div>
+
+<script>
+// Unit size visualizer: top-down drawings to scale (feet). Items: [label, x, y, w, h]
+(function () {
+  var Q = function (x, y) { return ["Queen bed", x, y, 5, 6.7]; };
+  var B = function (x, y) { return ["", x, y, 1.4, 1.4, "box"]; };
+  var base15 = [Q(0.3, 0.3), ["Sofa", 6.7, 0.3, 3, 7], ["Dresser", 0.3, 7.4, 4, 1.7], B(4.6, 7.6), B(6.1, 7.6), B(7.6, 7.6),
+    ["Table", 10.1, 0.3, 4, 3], ["Fridge", 10.1, 3.6, 2.6, 2.5], ["Washer", 12.7, 3.6, 2.2, 2.3], B(10.1, 6.5), B(11.6, 6.5), B(13.1, 6.5), B(10.1, 8), B(11.6, 8)];
+  var col = function (x, ys) { return ys.map(function (y) { return B(x, y); }); };
+  var row = function (y, xs) { return xs.map(function (x) { return B(x, y); }); };
+  var sofaH = function (x, y) { return ["Sofa", x, y, 7, 3]; };
+  var sofaV = function (x, y) { return ["Sofa", x, y, 3, 7]; };
+  var shelf = function (x, y) { return ["Shelving", x, y, 6, 1.8]; };
+  var dresserV = function (x, y) { return ["Dresser", x, y, 1.7, 4]; };
+  var base10 = [Q(0.3, 0.3), sofaV(6.7, 0.3), ["Dresser", 0.3, 7.4, 4, 1.7]].concat(row(7.6, [4.6, 6.1, 7.6]));
+  var sizes = [
+    { g: "Small", s: "8x5", w: 8, d: 5, p: 35, fits: "Boxes, a shelving unit, holiday decorations and seasonal gear.", items: [shelf(0.3, 0.3)].concat(row(2.9, [0.3, 1.9, 3.5, 5.1]), [B(6.4, 0.5)]) },
+    { g: "Small", s: "8x6", w: 8, d: 6, p: 42, fits: "Shelving and boxes, plus seasonal gear or a small apartment's extras.", items: [shelf(0.3, 0.3), B(6.5, 0.3)].concat(row(2.4, [0.3, 1.9, 3.5, 5.1, 6.5]), row(4.2, [0.3, 1.9, 3.5])) },
+    { g: "Small", s: "10x5", w: 10, d: 5, p: 45, fits: "A sofa or mattress set, plus boxes and small items. Good for a dorm or studio.", items: [sofaH(0.3, 0.3), ["Boxes", 7.6, 0.3, 2.1, 2.1]].concat(row(3.45, [0.3, 1.8, 3.3, 4.8, 7.6])) },
+    { g: "Small", s: "11x5", w: 11, d: 5, p: 49, fits: "A sofa plus plenty of boxes. Good for a dorm or studio.", items: [sofaH(0.3, 0.3)].concat(row(3.45, [0.3, 1.8, 3.3, 4.8, 6.2]), col(7.6, [0.3, 1.8, 3.45]), col(9.1, [0.3, 1.8, 3.45])) },
+    { g: "Small", s: "8x7.5", w: 8, d: 7.5, p: 52, fits: "A bed set and boxes, or the contents of a studio.", items: [Q(0.3, 0.3)].concat(col(5.6, [0.3, 1.8, 3.3, 4.8])) },
+    { g: "Small", s: "8x8", w: 8, d: 8, p: 55, fits: "A bed set, boxes and small furniture. Good for a studio.", items: [Q(0.3, 0.3)].concat(col(5.6, [0.3, 1.8, 3.3, 4.8, 6.3])) },
+    { g: "Small", s: "11x6", w: 11, d: 6, p: 57, fits: "A sofa, a dresser and plenty of boxes.", items: [sofaH(0.3, 0.3), dresserV(7.6, 0.3)].concat(row(3.5, [0.3, 1.8, 3.3, 4.8, 6.2]), col(9.5, [0.3, 1.8, 3.3]), [B(7.6, 4.5)]) },
+    { g: "Medium", s: "11x7", w: 11, d: 7, p: 59, fits: "A bed set, a dresser and a stack of boxes.", items: [Q(0.3, 0.3), dresserV(5.6, 0.3), B(5.6, 4.6)].concat(col(7.6, [0.3, 1.8, 3.3, 4.8]), col(9.1, [0.3, 1.8, 3.3, 4.8])) },
+    { g: "Medium", s: "10x8", w: 10, d: 8, p: 62, fits: "A sofa, a dresser and boxes. Good for a small apartment.", items: [sofaH(0.3, 0.3), ["Dresser", 0.3, 3.6, 4, 1.7]].concat(row(3.8, [4.6, 6.1]), row(5.8, [0.3, 1.8, 3.3, 4.8, 6.2]), col(7.6, [0.3, 1.8, 3.8, 5.8])) },
+    { g: "Medium", s: "11x7.5", w: 11, d: 7.5, p: 64, fits: "A queen bed, a sofa and boxes.", items: [Q(0.3, 0.3), sofaV(5.6, 0.3)].concat(col(8.9, [0.3, 1.8, 3.3, 4.8])) },
+    { g: "Medium", s: "10x10", w: 10, d: 10, p: 65, fits: "About a one-bedroom apartment: bed, sofa, dresser and boxes.", items: base10 },
+    { g: "Medium", s: "11x10", w: 11, d: 10, p: 72, fits: "About a one-bedroom apartment, with a little extra room.", items: base10.concat([B(9.1, 7.6)]) },
+    { g: "Large", s: "13.5x10", w: 13.5, d: 10, p: 85, fits: "A one-bedroom apartment plus extra boxes and gear.", items: base10.concat(col(10.2, [0.3, 1.8, 3.3, 4.8, 6.3, 7.8]), col(11.7, [0.3, 1.8, 3.3, 4.8, 6.3, 7.8])) },
+    { g: "Large", s: "15x10", w: 15, d: 10, p: 89, fits: "About a two-bedroom home: add a dining table, appliances and more boxes.", items: base15 },
+    { g: "Large", s: "16x10", w: 16, d: 10, p: 93, fits: "A two-bedroom home with room to spare, or staging furniture for a listing.", items: base15.concat([B(14.4, 0.3), B(14.4, 1.8), B(14.6, 6.5), B(14.6, 8)]) },
+    { g: "Large", s: "15x11", w: 15, d: 11, p: 99, fits: "A two-bedroom home with an extra row of boxes.", items: base15.concat(row(9.5, [4.6, 6.1, 7.6, 10.1, 11.6, 13.1])) },
+    { g: "Large", s: "13x15", w: 13, d: 15, p: 115, fits: "A two-bedroom home in a deep layout, with room for appliances and boxes.", items: base10.concat([["Table", 0.3, 10.3, 4, 3], ["Fridge", 4.6, 10.3, 2.6, 2.5], ["Washer", 7.5, 10.3, 2.2, 2.3]], col(10.0, [0.3, 1.8, 3.3, 4.8, 6.3, 7.8, 9.3, 10.8, 12.3]), col(11.5, [0.3, 1.8, 3.3, 4.8, 6.3, 7.8]), row(13.4, [0.3, 1.8, 3.3, 4.8, 6.3, 7.8])) },
+    { g: "Large", s: "22x10", w: 22, d: 10, p: 249, fits: "A three-bedroom home, or business inventory and equipment.", items: base15.concat([Q(15.2, 0.3), ["Dresser", 15.2, 7.4, 4, 1.7], B(20.5, 0.3), B(20.5, 1.8), B(20.5, 3.3), B(19.6, 7.6)]) }
+  ];
+  var NS = "http://www.w3.org/2000/svg", S = 26, M = 34, W = 22 * S + M * 2;
+  var svg = document.getElementById("sizeSvg"), tabs = document.querySelector(".size-tabs");
+  function el(tag, a, txt) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); if (txt) e.textContent = txt; return e; }
+  function draw(u) {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.setAttribute("viewBox", "0 0 " + W + " " + (u.d * S + M + 40));
+    var ox = M + (22 - u.w) * S / 2, oy = M;
+    // floor + 1 ft grid
+    svg.appendChild(el("rect", { x: ox, y: oy, width: u.w * S, height: u.d * S, fill: "#fbf9f5" }));
+    for (var i = 1; i < u.w; i++) svg.appendChild(el("line", { x1: ox + i * S, x2: ox + i * S, y1: oy, y2: oy + u.d * S, stroke: "#efeae2" }));
+    for (var j = 1; j < u.d; j++) svg.appendChild(el("line", { x1: ox, x2: ox + u.w * S, y1: oy + j * S, y2: oy + j * S, stroke: "#efeae2" }));
+    // One clean style for every item: thin warm-grey outline, white body, light-cream details. Boxes stay tan.
+    var LINE = "#a8a094", TINT = "#f1ece4", BOX = "#ead7bd", BOXLINE = "#c4a27c";
+    u.items.forEach(function (it) {
+      var x = ox + it[1] * S + 1, y = oy + it[2] * S + 1, w = it[3] * S - 2, h = it[4] * S - 2, kind = it[5] || it[0];
+      var g = el("g", { stroke: LINE, "stroke-width": 1.2, "stroke-linecap": "round" });
+      var R = function (a) { a.fill = a.fill || "#fff"; g.appendChild(el("rect", a)); };
+      var L = function (x1, y1, x2, y2) { g.appendChild(el("line", { x1: x1, y1: y1, x2: x2, y2: y2 })); };
+      if (kind === "box" || kind === "Boxes") {
+        var n = kind === "Boxes" ? 2 : 1, bs = (w + 2) / n;
+        for (var bi = 0; bi < n; bi++) for (var bj = 0; bj < n; bj++) {
+          var bx = x - 1 + bi * bs, by = y - 1 + bj * bs;
+          R({ x: bx + 1, y: by + 1, width: bs - 2, height: bs - 2, rx: 3, fill: BOX, stroke: BOXLINE });
+          g.appendChild(el("line", { x1: bx + bs / 2, x2: bx + bs / 2, y1: by + 3, y2: by + bs - 3, stroke: BOXLINE }));
+        }
+      } else if (kind === "Queen bed") {
+        R({ x: x, y: y, width: w, height: h, rx: 6 });
+        R({ x: x + 6, y: y + 6, width: w / 2 - 9, height: h * .13, rx: 5, fill: TINT });
+        R({ x: x + w / 2 + 3, y: y + 6, width: w / 2 - 9, height: h * .13, rx: 5, fill: TINT });
+        R({ x: x, y: y + h * .3, width: w, height: h * .7, rx: 6, fill: TINT });
+        L(x + 4, y + h * .4, x + w - 4, y + h * .4);
+      } else if (kind === "Sofa") {
+        var vert = h > w, bk = Math.min(w, h) * .26;
+        R({ x: x, y: y, width: w, height: h, rx: 7 });
+        if (vert) {
+          R({ x: x + w - bk, y: y, width: bk, height: h, rx: 6, fill: TINT });              // back
+          L(x + 4, y + h / 3, x + w - bk - 4, y + h / 3); L(x + 4, y + h * 2 / 3, x + w - bk - 4, y + h * 2 / 3);
+        } else {
+          R({ x: x, y: y, width: w, height: bk, rx: 6, fill: TINT });
+          L(x + w / 3, y + bk + 4, x + w / 3, y + h - 4); L(x + w * 2 / 3, y + bk + 4, x + w * 2 / 3, y + h - 4);
+        }
+      } else if (kind === "Dresser") {
+        R({ x: x, y: y, width: w, height: h, rx: 4 });
+        // drawer front along the long side
+        h > w ? L(x + 6, y + 4, x + 6, y + h - 4) : L(x + 4, y + h - 6, x + w - 4, y + h - 6);
+      } else if (kind === "Table") {
+        var cw = S * 1.1, ch = S * .55;
+        [[.18, 0], [.82, 0], [.18, 1], [.82, 1]].forEach(function (p) { R({ x: x + w * p[0] - cw / 2, y: p[1] ? y + h - ch : y, width: cw, height: ch, rx: 4, fill: TINT }); });
+        R({ x: x + 3, y: y + ch - 3, width: w - 6, height: h - 2 * ch + 6, rx: 6 });
+      } else if (kind === "Fridge") {
+        R({ x: x, y: y, width: w, height: h, rx: 5 });
+        L(x + w * .4, y + 4, x + w * .4, y + h - 4);
+      } else if (kind === "Washer") {
+        R({ x: x, y: y, width: w, height: h, rx: 5 });
+        g.appendChild(el("circle", { cx: x + w / 2, cy: y + h / 2, r: Math.min(w, h) * .3, fill: TINT }));
+      } else if (kind === "Shelving") {
+        R({ x: x, y: y, width: w, height: h, rx: 3 });
+        L(x + w / 4, y + 3, x + w / 4, y + h - 3); L(x + w * 3 / 4, y + 3, x + w * 3 / 4, y + h - 3);   // middle upright left out so it doesn't cross the label
+      }
+      svg.appendChild(g);
+      if (it[0] && kind !== "Boxes" && kind !== "box") {
+        var tx = x + w / 2, ty = y + h / 2 + 4, rot = h > w * 1.6;
+        if (kind === "Queen bed") ty = y + h * .68;
+        if (kind === "Washer") ty = y + h - 5;
+        var t = el("text", { x: tx, y: ty, "text-anchor": "middle", class: "lbl", style: "paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round" }, it[0]);
+        if (rot) t.setAttribute("transform", "rotate(-90 " + tx + " " + (y + h / 2) + ")");
+        svg.appendChild(t);
+      }
+    });
+    // one "Boxes" label per cluster of touching boxes
+    var groups = [];
+    u.items.filter(function (it) { return it[5] === "box" || it[0] === "Boxes"; }).forEach(function (it) {
+      var r = { x1: it[1], y1: it[2], x2: it[1] + it[3], y2: it[2] + it[4], n: it[0] === "Boxes" ? 4 : 1 };
+      var hit = groups.filter(function (gr) { return r.x1 <= gr.x2 + .4 && r.x2 >= gr.x1 - .4 && r.y1 <= gr.y2 + .4 && r.y2 >= gr.y1 - .4; });
+      hit.forEach(function (gr) { r.x1 = Math.min(r.x1, gr.x1); r.y1 = Math.min(r.y1, gr.y1); r.x2 = Math.max(r.x2, gr.x2); r.y2 = Math.max(r.y2, gr.y2); r.n += gr.n; groups.splice(groups.indexOf(gr), 1); });
+      groups.push(r);
+    });
+    groups.forEach(function (gr) {
+      var cx = ox + (gr.x1 + gr.x2) / 2 * S, cy = oy + (gr.y1 + gr.y2) / 2 * S + 4;
+      svg.appendChild(el("text", { x: cx, y: cy, "text-anchor": "middle", class: "lbl", style: "paint-order:stroke;stroke:#ead7bd;stroke-width:3.5px;stroke-linejoin:round;fill:#7a5a36" }, gr.n > 1 ? "Boxes" : "Box"));
+    });
+    // walls + door
+    svg.appendChild(el("rect", { x: ox, y: oy, width: u.w * S, height: u.d * S, fill: "none", stroke: "#e8681f", "stroke-width": 3, rx: 3 }));
+    var dw = Math.min(u.w, 6) * S, dx = ox + (u.w * S - dw) / 2;
+    svg.appendChild(el("line", { x1: dx, x2: dx + dw, y1: oy + u.d * S, y2: oy + u.d * S, stroke: "#fff", "stroke-width": 4 }));
+    svg.appendChild(el("line", { x1: dx, x2: dx + dw, y1: oy + u.d * S, y2: oy + u.d * S, stroke: "#e8681f", "stroke-width": 2, "stroke-dasharray": "6 5" }));
+    svg.appendChild(el("text", { x: dx + dw / 2, y: oy + u.d * S + 18, "text-anchor": "middle", class: "lbl" }, "Door"));
+    // dimensions
+    svg.appendChild(el("text", { x: ox + u.w * S / 2, y: oy - 12, "text-anchor": "middle", class: "dim" }, u.w + " ft"));
+    var vx = ox - 12, vy = oy + u.d * S / 2;
+    svg.appendChild(el("text", { x: vx, y: vy, "text-anchor": "middle", class: "dim", transform: "rotate(-90 " + vx + " " + vy + ")" }, u.d + " ft"));
+    document.getElementById("siSize").textContent = u.s + " · " + (u.w * u.d) + " sq ft";
+    document.getElementById("siPrice").textContent = "$" + u.p + "/month";
+    document.getElementById("siFits").textContent = u.fits;
+    document.getElementById("siRent").textContent = "Rent a " + u.s;
+  }
+  // Group buttons (Small / Medium / Large), then the sizes in that group
+  var groupBar = document.querySelector(".size-groups");
+  function showGroup(g, pick) {
+    groupBar.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-selected", x.dataset.g === g); });
+    while (tabs.firstChild) tabs.removeChild(tabs.firstChild);
+    var list = sizes.filter(function (u) { return u.g === g; });
+    var chosen = list.filter(function (u) { return u.s === pick; })[0] || list[0];
+    list.forEach(function (u) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab");
+      b.textContent = u.s;
+      var sm = document.createElement("small"); sm.textContent = "$" + u.p + "/mo"; b.appendChild(sm);
+      b.setAttribute("aria-selected", u === chosen);
+      b.onclick = function () { tabs.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-selected", x === b); }); draw(u); };
+      tabs.appendChild(b);
+    });
+    draw(chosen);
+  }
+  [["Small", "Under 70 sq ft"], ["Medium", "70–110 sq ft"], ["Large", "135+ sq ft"]].forEach(function (gr) {
+    var b = document.createElement("button");
+    b.type = "button"; b.dataset.g = gr[0];
+    b.textContent = gr[0];
+    var sm = document.createElement("small"); sm.textContent = gr[1]; b.appendChild(sm);
+    b.onclick = function () { showGroup(gr[0]); };
+    groupBar.appendChild(b);
+  });
+  showGroup("Medium", "10x10");
+})();
+
+// Carry the ad's tracking tags (utm_*, gclid) through to the rent page, so we can tell where renters came from.
+(function () {
+  var params = new URLSearchParams(location.search), keep = new URLSearchParams();
+  params.forEach(function (v, k) { if (/^utm_|^gclid$|^gbraid$|^wbraid$/.test(k)) keep.set(k, v); });
+  if (!keep.has("utm_source")) { keep.set("utm_source", "landing"); keep.set("utm_medium", "web"); }
+  document.querySelectorAll("a.rent").forEach(function (a) {
+    var u = new URL(a.href);
+    keep.forEach(function (v, k) { u.searchParams.set(k, v); });
+    a.href = u.toString();
+  });
+})();
+</script>
+</body>
+</html>
